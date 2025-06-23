@@ -40,3 +40,128 @@
 .read-the-docs {
   color: #888;
 }
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+  background-color: #f9f9f9;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Estilo para la tarjeta de evaluación */
+.evaluation-card {
+  margin: 10px auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px; /* Ajusta el ancho máximo de las tarjetas */
+  background-color: #fff;
+  display: flex; /* Usamos Flexbox para alinear los elementos */
+  justify-content: space-between; /* Espaciado entre el contenido y los botones */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Contenedor para el contenido de la evaluación */
+.evaluation-content {
+  flex: 1; /* Ocupa el espacio disponible */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Contenedor para los botones */
+.evaluation-actions {
+  display: flex; /* Usamos Flexbox para alinear los botones */
+  gap: 10px; /* Espaciado entre los botones */
+}
+
+/* Botón de editar */
+.edit-button {
+  background-color: #ffc107;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-button:hover {
+  background-color: #e0a800;
+}
+
+/* Botón de eliminar */
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.highlight {
+  color: green;
+  font-weight: bold;
+}
+
+/* Estilo para destacar "Reprobado" */
+.lowlight {
+  color: red;
+  font-weight: bold;
+}
+
+.form-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}

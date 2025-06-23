@@ -4,54 +4,54 @@ import List from './components/List';
 import './App.css';
 
 function App() {
-  // Estado para almacenar los elementos de la lista
+  // Estado para almacenar las evaluaciones
   const [items, setItems] = useState([]);
-  // Estado para almacenar el elemento que se está editando
+  // Estado para almacenar la evaluación que se está editando
   const [itemToEdit, setItemToEdit] = useState(null);
 
-  // useEffect para cargar los elementos almacenados en localStorage al iniciar la aplicación
+  // useEffect para cargar las evaluaciones almacenadas en localStorage al iniciar la aplicación
   useEffect(() => {
     const storedItems = JSON.parse(localStorage.getItem('items')) || [];
     setItems(storedItems);
   }, []);
 
-  // useEffect para guardar los elementos en localStorage cada vez que cambien
+  // useEffect para guardar las evaluaciones en localStorage cada vez que cambien
   useEffect(() => {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
 
-  // Función para agregar un nuevo elemento o actualizar uno existente
-  const addOrUpdateItem = (value) => {
+  // Función para agregar una nueva evaluación o actualizar una existente
+  const addOrUpdateItem = (newItem) => {
     if (itemToEdit) {
-      // Si hay un elemento en edición, se actualiza
+      // Si hay una evaluación en edición, se actualiza
       setItems(
         items.map((item) =>
-          item.id === itemToEdit.id ? { ...item, value } : item
+          item.id === itemToEdit.id ? { ...item, ...newItem } : item
         )
       );
       setItemToEdit(null); // Se limpia el estado de edición
     } else {
-      // Si no hay elemento en edición, se agrega uno nuevo
-      setItems([...items, { id: Date.now(), value }]);
+      // Si no hay evaluación en edición, se agrega una nueva
+      setItems([...items, { id: Date.now(), ...newItem }]);
     }
   };
 
-  // Función para eliminar un elemento por su id
+  // Función para eliminar una evaluación por su id
   const deleteItem = (id) => {
     setItems(items.filter((item) => item.id !== id));
   };
 
-  // Función para establecer un elemento como el que se está editando
+  // Función para establecer una evaluación como la que se está editando
   const editItem = (item) => {
     setItemToEdit(item);
   };
 
   return (
     <div className="App">
-      <h1>CRUD con LocalStorage</h1>
-      {/* Componente Form para agregar o editar elementos */}
+      <h1>Evaluación de Alumnos</h1>
+      {/* Componente Form para agregar o editar evaluaciones */}
       <Form addOrUpdateItem={addOrUpdateItem} itemToEdit={itemToEdit} />
-      {/* Componente List para mostrar los elementos y manejar las acciones de eliminar/editar */}
+      {/* Componente List para mostrar las evaluaciones y manejar las acciones de eliminar/editar */}
       <List items={items} deleteItem={deleteItem} editItem={editItem} />
     </div>
   );
